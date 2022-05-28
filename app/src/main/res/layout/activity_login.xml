@@ -56,6 +56,7 @@
                 android:textStyle="bold"/>
 
             <EditText
+                android:id="@+id/etemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="z1241@mail.com"
@@ -74,14 +75,15 @@
                 android:textStyle="bold"/>
 
             <EditText
+                android:id="@+id/etpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="•••••••"
-                android:textColorHint="#8d8d8d"
-                android:inputType="textPassword"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/round_input_button"
-                android:padding="15dp"/>
+                android:hint="•••••••"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColorHint="#8d8d8d" />
 
             <TextView
                 android:id="@+id/tvforgotpass"
