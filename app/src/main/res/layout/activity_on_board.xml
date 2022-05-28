@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnBoardActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/on_board_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:id="@+id/ivonboard"/>
+
+    <TextView
+        android:id="@+id/tvsafetext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Safe-Secure-Fast"
+        android:textSize="30sp"
+        android:textColor="#0f5644"
+        android:textStyle="bold"
+        android:layout_below="@+id/ivonboard"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/tvsafetext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message or call with your friends"
+        android:textSize="19sp"
+        android:layout_below="@+id/tvsafetext"
+        android:layout_marginTop="30dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvsafetext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="become more safe and secure"
+        android:textSize="19sp"
+        android:layout_below="@id/tvsafetext1"
+        android:layout_marginTop="5dp"
+        android:gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/skipButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/on_board_skip_button"
+        android:text="Skip"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@color/hot_pink"
+        android:layout_below="@id/tvsafetext2"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="45dp"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/skipButton"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

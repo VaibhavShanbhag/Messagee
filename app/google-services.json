@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "255617950284",
+    "project_id": "messagee-58243",
+    "storage_bucket": "messagee-58243.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255617950284:android:312f417839cfa1fd894ae9",
+        "android_client_info": {
+          "package_name": "com.vaibhav.messagee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255617950284-pf1gdnk4ee7g50flgv5o95cfqjs3buhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2takChkw2ZJgupiJbc0C3RKoUdz9Jn4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255617950284-pf1gdnk4ee7g50flgv5o95cfqjs3buhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
