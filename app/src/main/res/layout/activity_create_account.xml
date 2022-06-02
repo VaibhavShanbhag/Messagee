@@ -15,22 +15,25 @@
             android:id="@+id/tvlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Create an Account"
+            android:text="Create Account"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_below="@+id/tvlogin"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Welcome Back!"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white"/>
+
+
 
     </RelativeLayout>
 

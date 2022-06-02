@@ -30,7 +30,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:layout_below="@+id/tvlogin"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="20dp"/>
 
     </RelativeLayout>
 
@@ -50,29 +50,29 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email"
                 android:layout_marginTop="20dp"
+                android:text="Email"
                 android:textSize="17sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="z1241@mail.com"
-                android:textColorHint="#8d8d8d"
-                android:inputType="textEmailAddress"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/round_input_button"
-                android:padding="15dp"/>
+                android:hint="z1241@mail.com"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColorHint="#8d8d8d" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password"
                 android:layout_marginTop="25dp"
+                android:text="Password"
                 android:textSize="17sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etpassword"
@@ -85,22 +85,11 @@
                 android:padding="15dp"
                 android:textColorHint="#8d8d8d" />
 
-            <TextView
-                android:id="@+id/tvforgotpass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="Forgot Password?"
-                android:textColor="@color/green"
-                android:layout_marginTop="8dp"
-                android:gravity="end"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/round_button"
                 android:text="LOG IN"
                 android:textColor="@color/white" />

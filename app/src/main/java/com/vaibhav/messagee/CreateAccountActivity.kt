@@ -34,11 +34,15 @@ class CreateAccountActivity : AppCompatActivity() {
             val passwordText: String = etpassword.text.toString()
             val confirmPasswordText: String = etconfirmpass.text.toString()
 
-            if(passwordText.length < 8)
+            if(passwordText.length < 8){
+                diaglog.dismiss()
                 Toast.makeText(this,"Password length cannot be less than 8",Toast.LENGTH_SHORT).show()
+            }
 
-            else if(!(passwordText.equals(confirmPasswordText)))
+            else if(!(passwordText.equals(confirmPasswordText))){
+                diaglog.dismiss()
                 Toast.makeText(this,"Confirm Password Doesn't match",Toast.LENGTH_SHORT).show()
+            }
 
             else
                 signup(nameText,emailText,passwordText)

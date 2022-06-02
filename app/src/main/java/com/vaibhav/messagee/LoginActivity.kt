@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
@@ -19,12 +20,6 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         diaglog = ProgressDialog(this)
 
-        tvforgotpass.setOnClickListener {
-            Intent(this,ForgotPasswordActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-
         tvcreateaccount.setOnClickListener {
             Intent(this,CreateAccountActivity::class.java).also {
                 startActivity(it)
@@ -38,6 +33,17 @@ class LoginActivity : AppCompatActivity() {
             val email: String = etemail.text.toString()
             val password: String = etpassword.text.toString()
 
+            if(TextUtils.isEmpty(email)){
+                diaglog.dismiss()
+                etemail.setError("Email is Empty")
+            }
+
+            else if(TextUtils.isEmpty(password)){
+                diaglog.dismiss()
+                etpassword.setError("Password is Empty")
+            }
+
+            else
             login(email,password)
         }
     }
