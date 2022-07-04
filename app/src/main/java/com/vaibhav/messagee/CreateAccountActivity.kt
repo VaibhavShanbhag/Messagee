@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -52,12 +53,13 @@ class CreateAccountActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please Enter Valid Data",Toast.LENGTH_SHORT).show()
             }
 
-            if (!(emailText.matches(emailPattern.toRegex()))){
+            else if (!(emailText.matches(emailPattern.toRegex()))){
+                diaglog.dismiss()
                 etemail.setError("Please Enter Valid Email")
                 Toast.makeText(this, "Invalid Email Address", Toast.LENGTH_SHORT).show()
             }
 
-            if(passwordText.length < 8){
+            else if(passwordText.length < 8){
                 diaglog.dismiss()
                 Toast.makeText(this,"Password length cannot be less than 8",Toast.LENGTH_SHORT).show()
             }
@@ -69,9 +71,6 @@ class CreateAccountActivity : AppCompatActivity() {
 
             else{
                 signup(nameText,emailText,passwordText)
-                Intent(this, LoginActivity::class.java).also {
-                    startActivity(it)
-                }
             }
         }
 
@@ -86,7 +85,7 @@ class CreateAccountActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(resultCode == RESULT_OK && requestCode == pickImage){
-            imageUri = data?.data
+            imageUri = data?.data!!
             profile_image.setImageURI(imageUri)
         }
     }
@@ -98,8 +97,11 @@ class CreateAccountActivity : AppCompatActivity() {
                 diaglog.dismiss()
                 if (task.isSuccessful) {
 
-                    var databaseReference = firebaseDatabase.getReference().child("User").child(mAuth.uid.toString())
+                    var databaseReference = firebaseDatabase.getReference().child("user").child(mAuth.uid.toString())
                     var storageReference = firebaseStorage.getReference().child("upload").child(mAuth.uid.toString())
+                    Log.d("DatabaseReference", "$databaseReference")
+                    Log.d("StorageReference", "$storageReference")
+                    Log.d("Image Uri", "$imageUri")
 
                     if (imageUri != null){
                         storageReference.putFile(imageUri!!).addOnCompleteListener {
@@ -109,7 +111,10 @@ class CreateAccountActivity : AppCompatActivity() {
                                     val users = Users(mAuth.uid.toString(),nameText, emailText, ImageUri)
                                     databaseReference.setValue(users).addOnCompleteListener {
                                         if (it.isSuccessful){
-                                            startActivity(Intent(this, HomeActivity::class.java))
+                                            Intent(this, LoginActivity::class.java).also {
+                                                startActivity(it)
+                                                finish()
+                                            }
                                         }
 
                                         else{
@@ -126,17 +131,16 @@ class CreateAccountActivity : AppCompatActivity() {
                         val users = Users(mAuth.uid.toString(),nameText, emailText, ImageUri)
                         databaseReference.setValue(users).addOnCompleteListener {
                             if (it.isSuccessful){
-                                startActivity(Intent(this, HomeActivity::class.java))
+                                Intent(this, LoginActivity::class.java).also {
+                                    startActivity(it)
+                                    finish()
+                                }
                             }
 
                             else{
                                 Toast.makeText(this,"Some Error Occured", Toast.LENGTH_SHORT).show()
                             }
                         }
-                    }
-
-                    Intent(this, LoginActivity::class.java).also {
-                        startActivity(it)
                     }
 
                 } else {

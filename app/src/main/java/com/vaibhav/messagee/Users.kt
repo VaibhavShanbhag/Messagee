@@ -1,4 +1,17 @@
 package com.vaibhav.messagee
 
-data class Users(var uid: String, var name: String, var email: String, var ImageUri: String) {
+class Users {
+    var uid: String? = null
+    var name: String? = null
+    var email: String? = null
+    var imageUri: String? = null
+
+    constructor(){}
+
+    constructor(uid: String?, name: String?, email: String?, imageUri: String){
+        this.uid = uid
+        this.name = name
+        this.email = email
+        this.imageUri = imageUri
+    }
 }

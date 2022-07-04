@@ -7,11 +7,15 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_create_account.*
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.etemail
+import kotlinx.android.synthetic.main.activity_login.etpassword
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var diaglog: ProgressDialog
+    private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +47,12 @@ class LoginActivity : AppCompatActivity() {
                 etpassword.setError("Password is Empty")
             }
 
+            else if(!email.matches(emailPattern.toRegex())){
+                diaglog.dismiss()
+                etemail.setError("Please Enter Valid Email")
+                Toast.makeText(this, "Invalid Email Address", Toast.LENGTH_SHORT).show()
+            }
+
             else
             login(email,password)
         }
@@ -53,10 +63,11 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 diaglog.dismiss()
                 if (task.isSuccessful) {
-                    Toast.makeText(this,"Logged In",Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    finish()
 
                 } else {
-                    Toast.makeText(this,"User Does Not Exist", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"", Toast.LENGTH_SHORT).show()
                 }
             }
     }
