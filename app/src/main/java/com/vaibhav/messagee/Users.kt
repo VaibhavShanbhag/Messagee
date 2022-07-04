@@ -5,13 +5,16 @@ class Users {
     var name: String? = null
     var email: String? = null
     var imageUri: String? = null
+    var status: String? = null
 
     constructor(){}
 
-    constructor(uid: String?, name: String?, email: String?, imageUri: String){
+    constructor(uid: String?, name: String?, email: String?, imageUri: String?, status: String?){
         this.uid = uid
         this.name = name
         this.email = email
         this.imageUri = imageUri
+        this.status = status
     }
+
 }

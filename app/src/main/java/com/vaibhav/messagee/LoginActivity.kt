@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
                     finish()
 
                 } else {
-                    Toast.makeText(this,"", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Invalid Email Id or Password", Toast.LENGTH_SHORT).show()
                 }
             }
     }

@@ -23,6 +23,7 @@ class CreateAccountActivity : AppCompatActivity() {
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var firebaseStorage: FirebaseStorage
     private lateinit var ImageUri: String
+    private val status: String = "Here, I'am using Messagee Application"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,9 +95,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
         mAuth.createUserWithEmailAndPassword(emailText, passwordText)
             .addOnCompleteListener(this) { task ->
-                diaglog.dismiss()
                 if (task.isSuccessful) {
-
                     var databaseReference = firebaseDatabase.getReference().child("user").child(mAuth.uid.toString())
                     var storageReference = firebaseStorage.getReference().child("upload").child(mAuth.uid.toString())
                     Log.d("DatabaseReference", "$databaseReference")
@@ -108,9 +107,10 @@ class CreateAccountActivity : AppCompatActivity() {
                             if (it.isSuccessful) {
                                 storageReference.downloadUrl.addOnSuccessListener {
                                     ImageUri = it.toString()
-                                    val users = Users(mAuth.uid.toString(),nameText, emailText, ImageUri)
+                                    val users = Users(mAuth.uid.toString(),nameText, emailText, ImageUri, status)
                                     databaseReference.setValue(users).addOnCompleteListener {
                                         if (it.isSuccessful){
+                                            diaglog.dismiss()
                                             Intent(this, LoginActivity::class.java).also {
                                                 startActivity(it)
                                                 finish()
@@ -118,6 +118,7 @@ class CreateAccountActivity : AppCompatActivity() {
                                         }
 
                                         else{
+                                            diaglog.dismiss()
                                             Toast.makeText(this,"Some Error Occured", Toast.LENGTH_SHORT).show()
                                         }
                                     }
@@ -128,9 +129,10 @@ class CreateAccountActivity : AppCompatActivity() {
 
                     else{
                         ImageUri = "https://firebasestorage.googleapis.com/v0/b/messagee-58243.appspot.com/o/user.png?alt=media&token=d9520778-b10c-4cff-9926-905a1983fc19"
-                        val users = Users(mAuth.uid.toString(),nameText, emailText, ImageUri)
+                        val users = Users(mAuth.uid.toString(),nameText, emailText, ImageUri, status)
                         databaseReference.setValue(users).addOnCompleteListener {
                             if (it.isSuccessful){
+                                diaglog.dismiss()
                                 Intent(this, LoginActivity::class.java).also {
                                     startActivity(it)
                                     finish()
@@ -138,12 +140,14 @@ class CreateAccountActivity : AppCompatActivity() {
                             }
 
                             else{
+                                diaglog.dismiss()
                                 Toast.makeText(this,"Some Error Occured", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }
 
                 } else {
+                    diaglog.dismiss()
                     Toast.makeText(this,"Some Error occured",Toast.LENGTH_SHORT).show()
                 }
             }
