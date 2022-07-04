@@ -1,4 +1,4 @@
-package com.vaibhav.messagee
+package com.vaibhav.messagee.ModelClass
 
 class Users {
     var uid: String? = null

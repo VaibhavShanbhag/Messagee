@@ -1,4 +1,4 @@
-package com.vaibhav.messagee
+package com.vaibhav.messagee.Activity
 
 import android.app.Dialog
 import android.content.Intent
@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.vaibhav.messagee.R
+import com.vaibhav.messagee.Adapter.UserListAdapter
+import com.vaibhav.messagee.ModelClass.Users
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.dialog_layout.*
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -51,7 +53,7 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         ivlogout.setOnClickListener {
-            var dialog = Dialog(this,R.style.Dialoge)
+            var dialog = Dialog(this, R.style.Dialoge)
             dialog.setContentView(R.layout.dialog_layout)
             val tvnobtn: TextView = dialog.findViewById(R.id.tvnobtn)
             val tvyesbtn: TextView = dialog.findViewById(R.id.tvyesbtn)
@@ -60,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
             }
             tvyesbtn.setOnClickListener {
                 FirebaseAuth.getInstance().signOut()
-                startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
             dialog.show()

@@ -1,4 +1,4 @@
-package com.vaibhav.messagee
+package com.vaibhav.messagee.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import com.vaibhav.messagee.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
 
         Handler().postDelayed({
-          Intent(this,OnBoardActivity::class.java).also {
+          Intent(this, OnBoardActivity::class.java).also {
               startActivity(it)
               finish()
           }

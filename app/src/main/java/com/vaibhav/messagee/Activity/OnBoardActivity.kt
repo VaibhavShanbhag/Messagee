@@ -1,9 +1,10 @@
-package com.vaibhav.messagee
+package com.vaibhav.messagee.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
+import com.vaibhav.messagee.R
 import kotlinx.android.synthetic.main.activity_on_board.*
 
 class OnBoardActivity : AppCompatActivity() {

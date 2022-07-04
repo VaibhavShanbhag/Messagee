@@ -3,7 +3,7 @@
     package="com.vaibhav.messagee">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,22 +13,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Messagee">
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activity.ChatActivity"
             android:exported="false"
             android:theme="@style/Theme.Messagee2"/>
         <activity
-            android:name=".CreateAccountActivity"
+            android:name=".Activity.HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.Messagee2" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.CreateAccountActivity"
             android:exported="false"
             android:theme="@style/Theme.Messagee2" />
         <activity
-            android:name=".OnBoardActivity"
+            android:name=".Activity.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Messagee2" />
+        <activity
+            android:name=".Activity.OnBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

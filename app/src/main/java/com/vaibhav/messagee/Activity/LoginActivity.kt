@@ -1,4 +1,4 @@
-package com.vaibhav.messagee
+package com.vaibhav.messagee.Activity
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_create_account.*
+import com.vaibhav.messagee.R
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.etemail
 import kotlinx.android.synthetic.main.activity_login.etpassword
@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         diaglog = ProgressDialog(this)
 
         tvcreateaccount.setOnClickListener {
-            Intent(this,CreateAccountActivity::class.java).also {
+            Intent(this, CreateAccountActivity::class.java).also {
                 startActivity(it)
             }
         }

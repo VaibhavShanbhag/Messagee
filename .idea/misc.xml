@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/empty_back.xml" value="0.2361111111111111" />
+        <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/ic_back_arrow.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/on_board_skip_button.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/round_button.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/round_input_button.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/round_relative_layout.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/shape_dialog.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/drawable/user_list_background.xml" value="0.24537037037037038" />
+        <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/activity_create_account.xml" value="0.264" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/activity_forgot_password.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/activity_home.xml" value="0.2" />
@@ -17,6 +19,7 @@
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/activity_main.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/activity_on_board.xml" value="0.264" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/dialog_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/sender_layout_item.xml" value="0.2" />
         <entry key="..\:/Users/Vaibhav/AndroidStudioProjects/Messagee/app/src/main/res/layout/user_item_list.xml" value="0.264" />
       </map>
     </option>

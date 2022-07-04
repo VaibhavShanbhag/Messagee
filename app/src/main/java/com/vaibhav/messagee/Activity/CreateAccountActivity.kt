@@ -1,4 +1,4 @@
-package com.vaibhav.messagee
+package com.vaibhav.messagee.Activity
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.vaibhav.messagee.R
+import com.vaibhav.messagee.ModelClass.Users
 import kotlinx.android.synthetic.main.activity_create_account.*
 
 class CreateAccountActivity : AppCompatActivity() {
@@ -35,7 +37,7 @@ class CreateAccountActivity : AppCompatActivity() {
         diaglog = ProgressDialog(this)
 
         tvloginaccount.setOnClickListener {
-            Intent(this,LoginActivity::class.java).also {
+            Intent(this, LoginActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -75,7 +77,7 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         }
 
-        profile_image.setOnClickListener {
+        recevier_profile_image.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery,pickImage)
         }
@@ -87,7 +89,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
         if(resultCode == RESULT_OK && requestCode == pickImage){
             imageUri = data?.data!!
-            profile_image.setImageURI(imageUri)
+            recevier_profile_image.setImageURI(imageUri)
         }
     }
 

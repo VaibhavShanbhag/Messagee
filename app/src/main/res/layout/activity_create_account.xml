@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAccountActivity">
+    tools:context=".Activity.CreateAccountActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:textStyle="bold" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/recevier_profile_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_below="@+id/tvlogin"
