@@ -28,4 +28,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Dialoge">
+        <item name="android:windowBackground">@drawable/empty_back</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowMinWidthMajor">80%</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
 </resources>

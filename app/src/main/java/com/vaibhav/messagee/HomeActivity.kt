@@ -1,12 +1,16 @@
 package com.vaibhav.messagee
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.dialog_layout.*
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -46,8 +50,21 @@ class HomeActivity : AppCompatActivity() {
         adapter = UserListAdapter(this,userArrayList)
         recyclerView.adapter = adapter
 
-
-
+        ivlogout.setOnClickListener {
+            var dialog = Dialog(this,R.style.Dialoge)
+            dialog.setContentView(R.layout.dialog_layout)
+            val tvnobtn: TextView = dialog.findViewById(R.id.tvnobtn)
+            val tvyesbtn: TextView = dialog.findViewById(R.id.tvyesbtn)
+            tvnobtn.setOnClickListener {
+                dialog.dismiss()
+            }
+            tvyesbtn.setOnClickListener {
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this,LoginActivity::class.java))
+                finish()
+            }
+            dialog.show()
+        }
 
     }
 }
