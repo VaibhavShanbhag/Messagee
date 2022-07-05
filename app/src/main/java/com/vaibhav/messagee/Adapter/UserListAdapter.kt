@@ -1,5 +1,6 @@
 package com.vaibhav.messagee.Adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -33,6 +34,7 @@ class UserListAdapter(var context: Context?, var userArrayList: ArrayList<Users>
                     it.putExtra("receiverImage",userArrayList.get(position).imageUri)
                     it.putExtra("uid",userArrayList.get(position).uid)
                     context.startActivity(it)
+                    (context as Activity).finish()
                 }
             }
 

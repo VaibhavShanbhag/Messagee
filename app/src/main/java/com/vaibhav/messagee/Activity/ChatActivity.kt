@@ -35,6 +35,12 @@ class ChatActivity : AppCompatActivity() {
         lateinit var recevierImage: String
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, HomeActivity::class.java))
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
@@ -118,6 +124,10 @@ class ChatActivity : AppCompatActivity() {
                 }
             }
 
+        }
+
+        ivusersettings.setOnClickListener {
+            startActivity(Intent(this, UserSettingActivity::class.java))
         }
     }
 }

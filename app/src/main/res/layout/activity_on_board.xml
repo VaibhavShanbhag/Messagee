@@ -65,14 +65,14 @@
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/skipButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/round_button"
         android:text="Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_below="@+id/skipButton"
-        android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="18sp" />
 </RelativeLayout>

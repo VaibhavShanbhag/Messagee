@@ -13,9 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Messagee">
         <activity
-            android:name=".Activity.ChatActivity"
+            android:name=".Activity.UserSettingActivity"
             android:exported="false"
             android:theme="@style/Theme.Messagee2"/>
+        <activity
+            android:name=".Activity.ChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Messagee2" />
         <activity
             android:name=".Activity.HomeActivity"
             android:exported="false"
