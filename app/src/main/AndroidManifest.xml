@@ -7,37 +7,44 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/message_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/message_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Messagee">
         <activity
             android:name=".Activity.UserSettingActivity"
             android:exported="false"
-            android:theme="@style/Theme.Messagee2"/>
+            android:theme="@style/Theme.Messagee2"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.ChatActivity"
             android:exported="false"
-            android:theme="@style/Theme.Messagee2" />
+            android:theme="@style/Theme.Messagee2"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.HomeActivity"
             android:exported="false"
-            android:theme="@style/Theme.Messagee2" />
+            android:theme="@style/Theme.Messagee2"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.CreateAccountActivity"
             android:exported="false"
-            android:theme="@style/Theme.Messagee2" />
+            android:theme="@style/Theme.Messagee2"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.Messagee2" />
+            android:theme="@style/Theme.Messagee2"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.OnBoardActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

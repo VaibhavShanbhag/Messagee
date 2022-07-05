@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.vaibhav.messagee.Activity.ChatActivity
 import com.vaibhav.messagee.ModelClass.Users
 import com.vaibhav.messagee.R

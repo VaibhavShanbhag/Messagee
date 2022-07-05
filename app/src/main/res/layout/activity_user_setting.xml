@@ -77,6 +77,7 @@
                 android:textColor="#808080" />
 
             <EditText
+                android:id="@+id/etname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/update_text_box_style"
@@ -90,6 +91,7 @@
                 android:layout_marginTop="15dp"/>
 
             <EditText
+                android:id="@+id/etstatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/update_text_box_style"
@@ -103,6 +105,7 @@
                 android:layout_marginTop="15dp"/>
 
             <EditText
+                android:id="@+id/etemailid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/update_text_box_style"
@@ -120,7 +123,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="30dp"/>
 
         </LinearLayout>
 

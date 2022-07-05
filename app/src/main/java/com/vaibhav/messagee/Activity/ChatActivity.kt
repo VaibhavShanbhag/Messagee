@@ -53,7 +53,7 @@ class ChatActivity : AppCompatActivity() {
 
         adapter = MessageListAdapter(this,messageArrayList)
         val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(this)
-        linearLayoutManager.stackFromEnd
+        linearLayoutManager.stackFromEnd = true
         recyclerView.layoutManager = linearLayoutManager
 
         recyclerView.adapter = adapter

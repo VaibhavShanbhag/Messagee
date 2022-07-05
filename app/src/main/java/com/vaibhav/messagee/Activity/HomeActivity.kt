@@ -35,7 +35,14 @@ class HomeActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(datasnapshot: DataSnapshot in snapshot.children){
                     val users = datasnapshot.getValue(Users::class.java)
-                    userArrayList.add(users!!)
+                    if (FirebaseAuth.getInstance().currentUser?.uid.toString().equals(users?.uid)){
+                        continue
+                    }
+
+                    else{
+                        userArrayList.add(users!!)
+                    }
+
                 }
                 adapter.notifyDataSetChanged()
             }
@@ -68,5 +75,12 @@ class HomeActivity : AppCompatActivity() {
             dialog.show()
         }
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+//        finishAffinity();
+//        finish();
+//        moveTaskToBack(true);
     }
 }

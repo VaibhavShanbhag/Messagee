@@ -17,6 +17,7 @@ class OnBoardActivity : AppCompatActivity() {
 
         if (mAuth.currentUser != null){
             startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
 
         nextButton.setOnClickListener {
