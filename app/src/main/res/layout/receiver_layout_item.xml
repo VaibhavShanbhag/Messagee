@@ -5,26 +5,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/sender_profile_image"
+        android:id="@+id/receiver_profile_image"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_centerVertical="true"
         android:src="@drawable/user"
         app:civ_border_color="@color/green"
         app:civ_border_width="3dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_margin="8dp"/>
 
     <TextView
-        android:id="@+id/tvsendertext"
+        android:id="@+id/tvreceivertext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Wolld"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/sender_profile_image"
+        android:layout_toRightOf="@+id/receiver_profile_image"
         android:layout_margin="8dp"
-        android:background="@drawable/sender_chat_item"
-        android:textColor="@color/white"
+        android:background="@drawable/receiver_chat_item"
+        android:textColor="@color/green"
         android:textSize="16sp"
         android:padding="12dp"/>
 

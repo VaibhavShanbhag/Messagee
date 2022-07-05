@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/llmessage"
-            android:padding="10dp"/>
+            android:padding="10dp" />
 
         <LinearLayout
             android:id="@+id/llmessage"
@@ -116,6 +116,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/ivsendmessage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -123,7 +124,6 @@
                 app:cardCornerRadius="54dp">
 
                 <ImageView
-                    android:id="@+id/ivsendmessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

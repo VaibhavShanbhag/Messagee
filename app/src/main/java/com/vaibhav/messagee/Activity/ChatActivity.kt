@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.vaibhav.messagee.Adapter.MessageListAdapter
 import com.vaibhav.messagee.ModelClass.MessageModel
 import com.vaibhav.messagee.R
 import kotlinx.android.synthetic.main.activity_chat.*
@@ -27,6 +29,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var chatReference: DatabaseReference
     private lateinit var messageArrayList: ArrayList<MessageModel>
+    private lateinit var adapter: MessageListAdapter
     companion object{
         lateinit var senderImage: String
         lateinit var recevierImage: String
@@ -41,6 +44,13 @@ class ChatActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.rvchatusers)
 
         messageArrayList = ArrayList<MessageModel>()
+
+        adapter = MessageListAdapter(this,messageArrayList)
+        val linearLayoutManager: LinearLayoutManager = LinearLayoutManager(this)
+        linearLayoutManager.stackFromEnd
+        recyclerView.layoutManager = linearLayoutManager
+
+        recyclerView.adapter = adapter
 
         ReceiverImage = intent.getStringExtra("receiverImage").toString()
         ReceiverName = intent.getStringExtra("name").toString()
@@ -68,10 +78,12 @@ class ChatActivity : AppCompatActivity() {
 
         chatReference.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                messageArrayList.clear()
                 for (datasnapshot: DataSnapshot in snapshot.children){
                     val messageModel = datasnapshot.getValue(MessageModel::class.java)
                     messageArrayList.add(messageModel!!)
                 }
+                adapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -107,12 +119,5 @@ class ChatActivity : AppCompatActivity() {
             }
 
         }
-
-
-
-
-
-
-
     }
 }
